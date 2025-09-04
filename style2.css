@@ -1,0 +1,328 @@
+/* --- NEW "VIBRANT INDIGO" COLOR PALETTE --- */
+:root {
+    --color-primary: #4F46E5;      /* Vibrant Indigo */
+    --color-secondary: #3730A3;   /* Deeper Indigo for accents */
+    --color-accent: #14B8A6;       /* Energetic Teal CTA */
+    --color-accent-hover: #0D9488; /* Darker Teal for hover */
+    --color-background: #F9FAFB;  /* Clean Neutral Gray */
+    --color-surface: #FFFFFF;      /* Crisp White for cards */
+    --color-text-dark: #1F2937;    /* Dark Charcoal for text */
+    --color-text-light: #6B7280;   /* Softer Gray for secondary text */
+    --color-border: #D1D5DB;      /* Standard Border Gray */
+    --color-ui-light: #F3F4F6;     /* Light UI element background */
+    --color-success: #16A34A;      /* Strong Green for 'On Time' status */
+    --color-success-bg: #DCFCE7;   /* Light green background */
+    --color-warning: #D97706;      /* Amber for 'Delayed' */
+    --color-warning-bg: #FEF3C7;   /* Light amber background */
+    --color-danger: #DC2626;       /* Strong Red for 'Cancelled' */
+    --color-danger-bg: #FEE2E2;    /* Light red background */
+}
+
+/* FIXED: Corrected margin properties */
+.flight-data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%; /* Added for better alignment */
+    margin-top: 30px; /* FIXED: Removed space */
+}
+
+/* General Body and Container Styles */
+body {
+    display: flex;             /* REQUIRED: Makes the body a flex container */
+    flex-direction: column;    /* REQUIRED: Stacks children vertically */
+    min-height: 100vh;         /* REQUIRED: Makes the body at least the full height of the screen */
+    
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(160deg, var(--color-background) 60%, #EEF2FF 100%);
+    margin: 0;
+    color: var(--color-text-dark);
+    align-items: center;
+}
+
+/* Header Styles */
+.nav {
+    background-color: var(--color-surface);
+    width: 100%;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-shadow: none;
+    padding-left: 50px;
+    display: inline-block
+}
+
+/* Main Content Wrapper */
+.main-content {
+    flex: 1; /* <-- ADD THIS LINE */
+    width: 100%;
+    max-width: 72rem;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Search Card Container */
+.card-container {
+    background-color: var(--color-surface);
+    color: var(--color-text-dark);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(107, 114, 128, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-text-dark);
+    margin: 0;
+}
+
+/* Search Form Styles */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.search-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    background-color: transparent; 
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input-label {
+    /* FIXED: Removed excessive padding: 20px; */
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    padding-left: 0.5rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-field::placeholder {
+    color: #9CA3AF;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.search-btn {
+    padding: 1rem 2rem;
+    background: var(--color-accent);
+    color: var(--color-surface);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 100%;
+}
+
+.search-btn:hover {
+    background: var(--color-accent-hover);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
+}
+
+/* --- ADDED: Styles for "or" Separator --- */
+.search-separator {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.search-separator span {
+    padding: 0 1rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Messages and Flight Data Display */
+.message {
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-text-light); 
+    background-color: var(--color-ui-light);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* Redesigned Flight Card */
+.flight-card {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.flight-card:hover {
+    box-shadow: 0 4px 20px rgba(107, 114, 128, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+}
+
+/* ... (rest of flight card styles are fine) ... */
+.flight-card-header, .flight-info, .flight-status, .flight-status.on-time, .flight-status.delayed, .flight-status.cancelled, .flight-route, .flight-details-grid, .detail-item, .detail-item strong {
+    /* These styles were correct */
+}
+.flight-card-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;padding-bottom:1rem;border-bottom:1px solid var(--color-border)}.flight-info{font-size:1.25rem;font-weight:600;color:var(--color-text-dark)}.flight-status{padding:.3rem .8rem;border-radius:.5rem;font-size:.85rem;font-weight:700}.flight-status.on-time{background-color:var(--color-success-bg);color:var(--color-success)}.flight-status.delayed{background-color:var(--color-warning-bg);color:var(--color-warning)}.flight-status.cancelled{background-color:var(--color-danger-bg);color:var(--color-danger)}.flight-route{font-size:.95rem;color:var(--color-text-light);margin-top:.5rem}.flight-details-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem}.detail-item{font-size:.9rem;color:var(--color-text-light)}.detail-item strong{display:block;font-size:1.1rem;color:var(--color-text-dark);margin-top:.25rem}
+
+
+.profile-icon {
+    cursor: pointer;
+    padding-right: 20px;
+    width: 35px;
+    height: 35px;
+    float: right;
+    border-radius: 50%;
+}
+
+footer {
+    background-color: var(--color-text-dark);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* --- REPLACED: Responsive Design Section --- */
+@media (max-width: 639px) {
+    /* Responsive styles for "or" on mobile */
+    .search-separator {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    .search-separator::before,
+    .search-separator::after {
+        content: '';
+        flex-grow: 1;
+        height: 1px;
+        background-color: var(--color-border);
+    }
+}
+
+@media (min-width: 640px) {
+    .search-fields {
+        flex-direction: row;
+        align-items: center; /* Better vertical alignment */
+        gap: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    /* Join the "From" and "To" fields into a single visual block */
+    .input-group:nth-child(1) .input-field {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none; /* Remove the right border ONLY from the "From" field */
+    }
+
+    .input-group:nth-child(2) .input-field {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    /* Ensure the standalone "Flight Number" input has its own rounded corners */
+    .input-group:nth-child(4) .input-field {
+        border-radius: 0.5rem;
+    }
+    
+    .search-btn {
+        width: auto;
+    }
+}
+
+/* ... (rest of your responsive styles are fine) ... */
+@media (min-width: 640px){.flight-card{flex-direction:row;justify-content:space-between;align-items:flex-start}.flight-card-header{flex-direction:column;align-items:flex-start;gap:.25rem}}
+
+/* Navbar Search styles */
+.navbar-search {
+    display: none;
+    flex: 1;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 20px;
+}
+.navbar-search .input-field {
+    width: 120px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    font-size: 14px;
+}
+#navSearchBtn {
+    padding: 6px 12px;
+    background-color: var(--color-accent);
+    color: var(--color-surface);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#navSearchBtn:hover {
+    background-color: var(--color-accent-hover);
+}

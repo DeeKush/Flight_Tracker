@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Tracker</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style2.css">
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for a clean, modern look -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/phosphor.js"></script>
+</head>
+
+<body>
+    <header class="nav" id="navbar">
+        <div class="logo">SkyFinder</div>
+
+        <!-- Sticky search inside navbar -->
+        <div class="navbar-search">
+            <input type="text" id="navDepIata" placeholder="From" class="input-field">
+            <input type="text" id="navArrIata" placeholder="To" class="input-field">
+            <input type="date" id="navFlightDate" class="input-field date-field">
+            <button id="navSearchBtn">Search</button>
+        </div>
+
+        <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="profile_icon" class="profile-icon">
+    </header>
+
+
+    <div class="main-content">
+        <div class="card-container">
+            <h1 class="title">From Gate to Baggage Claim, Stay Informed.</h1>
+
+            <div class="search-form">
+                <div class="search-fields">
+
+                    <div class="input-group">
+                        <label for="depIata" class="input-label">From</label>
+                        <input type="text" id="depIata" placeholder="Airport Code" class="input-field">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="arrIata" class="input-label">To</label>
+                        <input type="text" id="arrIata" placeholder="Airport Code" class="input-field">
+                    </div>
+                    <!-- 
+                    <div class="input-group">
+                        <label for="flightDate" class="input-label">Date</label>
+                        <input type="date" id="flightDate" class="input-field" value="2025-08-24">
+                    </div> -->
+
+                    <div class="search-separator">
+                        <span>or</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="flightNumber" class="input-label">Flight Number</label>
+                        <input type="text" id="flightNumber" placeholder="e.g., AI5051" class="input-field">
+                    </div>
+
+                </div>
+                <button id="searchBtn" class="search-btn">
+                    <i class="ph-magnifying-glass-bold"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+        <!-- Message/Loading Indicator -->
+        <div id="message" class="message"></div>
+
+        <!-- Flight Data Display Area -->
+        <div id="flightData" class="flight-data-container">
+            <!-- Flight data will be dynamically added here -->
+        </div>
+    </div>
+
+    <footer
+        style="background-color:#1e1e1e; color:#fff; text-align:center; padding:20px; font-family:'Inter', sans-serif; margin-top:40px;">
+        <p>&copy; 2025 FlightFinder. All rights reserved.</p>
+        <p class="text-sm mt-2">Made with <i data-lucide="heart" class="inline-block w-4 h-4 text-red-500"></i> by a
+            beginner developer.</p>
+        <p>
+            <a href="#" style="color:#4fc3f7; text-decoration:none; margin:0 10px;">Privacy Policy</a> |
+            <a href="#" style="color:#4fc3f7; text-decoration:none; margin:0 10px;">Terms of Service</a>
+        </p>
+
+    </footer>
+
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
